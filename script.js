@@ -11,3 +11,21 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+
+function getHumanChoice() {
+    humanChoice = prompt("Choose: \"rock\" | \"paper\" | \"scissors\"")
+
+    if (humanChoice === "rock") {
+        return "rock";
+    }
+    else if (humanChoice === "paper") {
+        return "paper";
+    }
+    else if (humanChoice === "scissors") {
+        return "scissors";
+    }
+    else {
+        return "Invalid response";
+    }
+}
