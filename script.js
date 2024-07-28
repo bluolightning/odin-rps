@@ -1,31 +1,24 @@
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3);
-
-    if (randomNumber === 0) {
-        return "rock";
-    }
-    else if (randomNumber === 1) {
-        return "paper";
-    }
-    else {
-        return "scissors";
+    switch(Math.floor(Math.random() * 3)) {
+        case 0 :
+            return "rock";
+        case 1 :
+            return "paper";
+        case 2 :
+            return "scissors";
     }
 }
 
 
 function getHumanChoice() {
-    humanChoice = prompt("Choose: \"rock\" | \"paper\" | \"scissors\"")
-
-    if (humanChoice === "rock") {
-        return "rock";
-    }
-    else if (humanChoice === "paper") {
-        return "paper";
-    }
-    else if (humanChoice === "scissors") {
-        return "scissors";
-    }
-    else {
-        return "Invalid response";
+    switch(prompt("Choose: \"rock\" | \"paper\" | \"scissors\"")) {
+        case "rock" :
+            return "rock";
+        case "paper" :
+            return "paper";
+        case "scissors" :
+            return "scissors";
+        default :
+            return "Invalid response";
     }
 }
