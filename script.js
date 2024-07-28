@@ -43,7 +43,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-let humanSelection = getHumanChoice(),
-    computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection)
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let humanSelection = getHumanChoice(),
+            computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(`Scoreboard: \n    Player: ${humanScore} \n    Computer: ${computerScore}`);
+    }
+}
