@@ -11,7 +11,7 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    switch(prompt("Choose: \"rock\" | \"paper\" | \"scissors\"")) {
+    switch(prompt("Choose: \"rock\" | \"paper\" | \"scissors\"").toLowerCase()) {
         case "rock" :
             return "rock";
         case "paper" :
