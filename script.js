@@ -42,17 +42,24 @@ function playRound(humanChoice, computerChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelector(".container").querySelectorAll("button");
+const buttons = document.querySelector(".button-container").querySelectorAll("button");
 const resultList = document.querySelector("ul");
 const roundResult = document.createElement("li");
-const scoreBoard = document.createElement("li");
+const humanScoreboard = document.createElement("li");
+const computerScoreboard = document.createElement("li");
 
 resultList.appendChild(roundResult);
-resultList.appendChild(scoreBoard);
+resultList.appendChild(humanScoreboard);
+resultList.appendChild(computerScoreboard);
+
+roundResult.textContent = "Play a round to see the result!";
+humanScoreboard.textContent = "Player Score: 0";
+computerScoreboard.textContent = "Computer Score: 0";
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         playRound(`${button.className}`, getComputerChoice());
-        scoreBoard.textContent = (`Scoreboard:\n  Player: ${humanScore}\n  Computer: ${computerScore}`);
+        humanScoreboard.textContent = `Player Score: ${humanScore}`;
+        computerScoreboard.textContent = `Computer Score: ${computerScore}`;
     })
 });
