@@ -9,7 +9,6 @@ function getComputerChoice() {
     }
 }
 
-
 function getHumanChoice() {
     switch(prompt("Choose: \"rock\" | \"paper\" | \"scissors\"").toLowerCase()) {
         case "rock" :
@@ -22,9 +21,6 @@ function getHumanChoice() {
             return "Invalid response";
     }
 }
-
-let humanScore = 0,
-    computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "Invalid response") {
@@ -43,11 +39,16 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let humanSelection = getHumanChoice(),
-            computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        console.log(`Scoreboard: \n    Player: ${humanScore} \n    Computer: ${computerScore}`);
-    }
-}
+let humanScore = 0;
+let computerScore = 0;
+
+const buttons = document.querySelector(".container").querySelectorAll("button");
+
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        
+        playRound(`${button.className}`, getComputerChoice());
+        console.log(`Scoreboard:\n  Player: ${humanScore}\n  Computer: ${computerScore}`);
+    })
+});
