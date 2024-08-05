@@ -24,17 +24,17 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "Invalid response") {
-        console.log("Invalid player response");
+        roundResult.textContent = ("Invalid player response");
     } else if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
+        roundResult.textContent = ("It's a tie!");
     } else if (humanChoice === "rock" && computerChoice === "scissors"
         || humanChoice === "scissors" && computerChoice === "paper"
         || humanChoice === "paper" && computerChoice === "rock"
     ) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        roundResult.textContent = (`You win! ${humanChoice} beats ${computerChoice}!`);
         humanScore++
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+        roundResult.textContent = (`You lose! ${computerChoice} beats ${humanChoice}!`);
         computerScore++
     }
 }
@@ -43,12 +43,16 @@ let humanScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelector(".container").querySelectorAll("button");
+const resultList = document.querySelector("ul");
+const roundResult = document.createElement("li");
+const scoreBoard = document.createElement("li");
 
+resultList.appendChild(roundResult);
+resultList.appendChild(scoreBoard);
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        
         playRound(`${button.className}`, getComputerChoice());
-        console.log(`Scoreboard:\n  Player: ${humanScore}\n  Computer: ${computerScore}`);
+        scoreBoard.textContent = (`Scoreboard:\n  Player: ${humanScore}\n  Computer: ${computerScore}`);
     })
 });
