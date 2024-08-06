@@ -77,7 +77,7 @@ buttons.forEach((button) => {
             document.querySelector(".round-result").textContent = `A score of 5 was reached! ${roundWinner} is the winner!`;
             document.querySelector(".reset-button").style.display = "initial";
         }
-    })
+    });
 });
 
 document.querySelector(".reset-button").addEventListener("click", () => {
