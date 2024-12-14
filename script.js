@@ -39,10 +39,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function buttonClicked() {
-
-}
-
 let humanScore = 0;
 let computerScore = 0;
 let roundWinner = "default";
