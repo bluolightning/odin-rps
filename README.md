@@ -1,1 +1,1 @@
-A game of rock-paper-scissors playable through the console - Currently lacks GUI
+A game of rock-paper-scissors against a computer. First to 5 wins!
